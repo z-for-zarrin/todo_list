@@ -10,12 +10,11 @@ form.addEventListener("submit", (evt) => {
     toDoList.appendChild(newListItem);
 
     const button = document.createElement("button");
-    button.addEventListener("click", () => {
-
+    button.addEventListener("click", () => { 
+        newListItem.remove();
     })
     newListItem.append(button);
     button.innerText = "🏴󠁧󠁢󠁳󠁣󠁴󠁿";
-
 });
 
 
