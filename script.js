@@ -8,4 +8,14 @@ form.addEventListener("submit", (evt) => {
     const newListItem = document.createElement("li");
     newListItem.innerText = evt.target["new-todo"].value;
     toDoList.appendChild(newListItem);
+
+    const button = document.createElement("button");
+    button.addEventListener("click", () => {
+
+    })
+    newListItem.append(button);
+    button.innerText = "🏴󠁧󠁢󠁳󠁣󠁴󠁿";
+
 });
+
+
