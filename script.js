@@ -20,10 +20,12 @@ form.addEventListener("submit", (evt) => {
     const tickButton = document.createElement("button");
     tickButton.addEventListener("click", () => { 
         newListItem.remove();
+        tickButton.remove();
         completedList.appendChild(newListItem);
     })
     newListItem.append(tickButton);
     tickButton.innerText = "🏴󠁧󠁢󠁥󠁮󠁧󠁿";
+    
 
 });
 
