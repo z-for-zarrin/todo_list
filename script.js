@@ -1,6 +1,8 @@
 const form = document.querySelector("#todo-form");
 const inputText = document.querySelector("#new-todo");
 const toDoList = document.querySelector("#list");
+const completedList = document.querySelector("#completed-list");
+
 
 form.addEventListener("submit", (evt) => {
     evt.preventDefault();
@@ -8,12 +10,21 @@ form.addEventListener("submit", (evt) => {
     newListItem.innerText = evt.target["new-todo"].value;
     toDoList.appendChild(newListItem);
 
-    const button = document.createElement("button");
-    button.addEventListener("click", () => { 
+    const deleteButton = document.createElement("button");
+    deleteButton.addEventListener("click", () => { 
         newListItem.remove();
     })
-    newListItem.append(button);
-    button.innerText = "🏴󠁧󠁢󠁳󠁣󠁴󠁿";
+    newListItem.append(deleteButton);
+    deleteButton.innerText = "🏴󠁧󠁢󠁳󠁣󠁴󠁿";
+
+    const tickButton = document.createElement("button");
+    tickButton.addEventListener("click", () => { 
+        newListItem.remove();
+        completedList.appendChild(newListItem);
+    })
+    newListItem.append(tickButton);
+    tickButton.innerText = "🏴󠁧󠁢󠁥󠁮󠁧󠁿";
+
 });
 
 const dateButton = document.querySelector("#show-date");
