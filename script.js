@@ -4,7 +4,6 @@ const toDoList = document.querySelector("#list");
 
 form.addEventListener("submit", (evt) => {
     evt.preventDefault();
-    console.log(evt);
     const newListItem = document.createElement("li");
     newListItem.innerText = evt.target["new-todo"].value;
     toDoList.appendChild(newListItem);
@@ -15,6 +14,14 @@ form.addEventListener("submit", (evt) => {
     })
     newListItem.append(button);
     button.innerText = "🏴󠁧󠁢󠁳󠁣󠁴󠁿";
+});
+
+const dateButton = document.querySelector("#show-date");
+const dateDisplay = document.querySelector("#date-display")
+
+dateButton.addEventListener("click", (evt) => {
+    const date = new Date();
+    dateDisplay.innerText = new Intl.DateTimeFormat('en-UK').format(date);
 });
 
 
